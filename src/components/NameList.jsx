@@ -1,6 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { useSelector, useDispatch } from "react-redux";
+
 function NameList({ val }) {
+  const { loading, item, error } = useSelector((state) => ({
+    loading: state.loading,
+    item: state.item,
+    error: state.error,
+  }));
+
   console.log(val);
   return (
     <Wrapper>
