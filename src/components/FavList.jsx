@@ -11,28 +11,20 @@ import {
 import { useState } from "react";
 
 function FavList({ val }) {
-  const [check,setCheck] =useState("")
+  const [check, setCheck] = useState("");
   const dispatch = useDispatch();
-  const handleChange = (e) => {
-    setCheck(e)
-    console.log(e);
-  };
+
   // console.log(val);
   return (
     <Wrapper>
       <div>
-        <input
-          type="checkbox"
-          value="checked"
-          onChange={() => handleChange(val)}
-        />
         <h3>{val.first_name}</h3>
       </div>
 
       <div>
-        <button onClick={() => dispatch(addItem(val))}>Add to fav</button>
-
-        <button onClick={() => dispatch(deleteItem({val,check}))}>delete</button>
+        <button onClick={() => dispatch(deleteItem({ val, check }))}>
+          delete
+        </button>
       </div>
     </Wrapper>
   );

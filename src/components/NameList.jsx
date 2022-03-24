@@ -17,7 +17,15 @@ function NameList({ val }) {
 
   const dispatch = useDispatch();
   const handleChange = (e) => {
-    setCssclass("backcolour");
+
+
+    
+    if (cssclass == "backcolour") {
+      setCssclass("");
+    } else {
+      setCssclass("backcolour");
+    }
+
     setCheck(e);
 
     console.log(cssclass);
@@ -63,8 +71,7 @@ const Wrapper = styled.div`
     align-items: center;
   }
   .backcolour {
-    background: blue;
-    background-color: aqua;
+    background-color: hsla(50, 33%, 25%, .75);
     z-index: 1;
   }
 `;

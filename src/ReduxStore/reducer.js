@@ -43,7 +43,9 @@ const reducer = (state = initState, { type, payload }) => {
     case ADD_ITEM_FAVORITE:
       return {
         ...state,
+
         fav: [...state.fav, payload],
+        
       };
     default:
       return state;
