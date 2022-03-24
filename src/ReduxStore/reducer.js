@@ -31,12 +31,11 @@ const reducer = (state = initState, { type, payload }) => {
     }
 
     case DELETE_ITEM:
-      console.log(payload)
+      console.log(payload);
       return {
         ...state,
         item: state.item.filter((el) => {
-
-          if (el.id !== payload) {
+          if (el.id !== payload.check.id && el.id !== payload.val) {
             return el;
           }
         }),
@@ -44,7 +43,7 @@ const reducer = (state = initState, { type, payload }) => {
     case ADD_ITEM_FAVORITE:
       return {
         ...state,
-        fav: [...state.fav,payload]
+        fav: [...state.fav, payload],
       };
     default:
       return state;

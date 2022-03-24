@@ -9,25 +9,18 @@ import {
   addItem,
 } from "../ReduxStore/action";
 import { useState } from "react";
-import { useEffect } from "react";
 
-function NameList({ val }) {
-  const [check, setCheck] = useState("");
-  const [cssclass, setCssclass] = useState("");
-
+function FavList({ val }) {
+  const [check,setCheck] =useState("")
   const dispatch = useDispatch();
   const handleChange = (e) => {
-    setCssclass("backcolour");
-    setCheck(e);
-
-    console.log(cssclass);
+    setCheck(e)
     console.log(e);
   };
   // console.log(val);
-
   return (
     <Wrapper>
-      <div className={cssclass}>
+      <div>
         <input
           type="checkbox"
           value="checked"
@@ -36,18 +29,16 @@ function NameList({ val }) {
         <h3>{val.first_name}</h3>
       </div>
 
-      <div className={cssclass}>
+      <div>
         <button onClick={() => dispatch(addItem(val))}>Add to fav</button>
 
-        <button onClick={() => dispatch(deleteItem({ val, check }))}>
-          delete
-        </button>
+        <button onClick={() => dispatch(deleteItem({val,check}))}>delete</button>
       </div>
     </Wrapper>
   );
 }
 
-export default NameList;
+export default FavList;
 
 const Wrapper = styled.div`
   height: 50px;
@@ -61,10 +52,5 @@ const Wrapper = styled.div`
   div {
     display: flex;
     align-items: center;
-  }
-  .backcolour {
-    background: blue;
-    background-color: aqua;
-    z-index: 1;
   }
 `;
