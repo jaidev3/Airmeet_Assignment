@@ -4,8 +4,16 @@ function NameList({val}) {
   console.log(val)
   return (
     <Wrapper>
+      <div>
       <input type="checkbox" />
-      <h1>{val.first_name}</h1>
+      <h3>{val.first_name}</h3>
+      </div>
+      
+      <div>
+      <button>delete</button>
+      <button>Add to fav</button>
+      </div>
+     
     </Wrapper>
   )
 }
@@ -13,9 +21,16 @@ function NameList({val}) {
 export default NameList
 
 const Wrapper =styled.div`
-height: 30px;
-width: 300px;
+height: 50px;
+width: 500px;
 border: 1px solid black;
 margin: auto;
 gap: 10px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+div{
+  display: flex;
+  align-items: center;
+}
 `
