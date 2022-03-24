@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import NameList from "../components/NameList";
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
   getItemError,
@@ -32,10 +33,12 @@ function HomePage() {
         dispatch(getItemError(err));
       });
   };
-  // console.log(data)
 
   return (
     <div>
+      <Link to="/fav">
+        <button>Favroite</button>{" "}
+      </Link>
       {loading ? (
         <h1>Loading..........</h1>
       ) : (

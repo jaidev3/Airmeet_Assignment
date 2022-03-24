@@ -3,9 +3,10 @@ import {
   GET_ITEM_ERROR,
   GET_ITEM_LOADING,
   GET_ITEM_SUCCESS,
+  ADD_ITEM_FAVORITE,
 } from "./actionType";
 
-const initState = { loading: false, item: "", errors: false };
+const initState = { loading: false, item: [], fav: [], errors: false };
 
 const reducer = (state = initState, { type, payload }) => {
   switch (type) {
@@ -37,6 +38,11 @@ const reducer = (state = initState, { type, payload }) => {
             return el;
           }
         }),
+      };
+    case ADD_ITEM_FAVORITE:
+      return {
+        ...state,
+        fav: [...state.fav,payload]
       };
     default:
       return state;

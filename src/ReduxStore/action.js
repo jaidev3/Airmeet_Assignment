@@ -3,14 +3,17 @@ import {
   GET_ITEM_ERROR,
   GET_ITEM_LOADING,
   GET_ITEM_SUCCESS,
+  ADD_ITEM_FAVORITE,
 } from "./actionType";
 
-export const deleteItem = (data) => {
-  return {
-    type: DELETE_ITEM,
-    payload: data,
-  };
-};
+export const deleteItem = (data) => ({
+  type: DELETE_ITEM,
+  payload: data,
+});
+export const addItem = (data) => ({
+  type: ADD_ITEM_FAVORITE,
+  payload: data,
+});
 export const getItemLoading = (data) => ({
   type: GET_ITEM_LOADING,
   payload: data,
