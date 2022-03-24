@@ -43,7 +43,7 @@ function HomePage() {
         <h1>Loading..........</h1>
       ) : (
         <div>
-          {data.map((e) => (
+          {item.map((e) => (
             <NameList key={e.id} val={e} />
           ))}
         </div>

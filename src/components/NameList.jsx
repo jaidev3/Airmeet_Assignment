@@ -1,15 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
+import {
+  getItemError,
+  getItemLoading,
+  getItemSuccess,
+  deleteItem,
+  addItem,
+} from "../ReduxStore/action";
 
 function NameList({ val }) {
+  const dispatch = useDispatch();
   const { loading, item, error } = useSelector((state) => ({
     loading: state.loading,
     item: state.item,
     error: state.error,
   }));
 
-  console.log(val);
+  // console.log(val);
   return (
     <Wrapper>
       <div>
@@ -18,8 +26,9 @@ function NameList({ val }) {
       </div>
 
       <div>
-        <button>delete</button>
-        <button>Add to fav</button>
+        <button onClick={()=>dispatch(addItem(val))}>Add to fav</button>
+
+        <button onClick={()=>dispatch(deleteItem(val.id))}>delete</button>
       </div>
     </Wrapper>
   );

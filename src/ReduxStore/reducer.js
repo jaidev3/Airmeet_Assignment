@@ -31,9 +31,11 @@ const reducer = (state = initState, { type, payload }) => {
     }
 
     case DELETE_ITEM:
+      console.log(payload)
       return {
         ...state,
         item: state.item.filter((el) => {
+
           if (el.id !== payload) {
             return el;
           }
