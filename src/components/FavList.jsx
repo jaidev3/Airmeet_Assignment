@@ -1,19 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  getItemError,
-  getItemLoading,
-  getItemSuccess,
-  deleteItem,
-  addItem,
-} from "../ReduxStore/action";
-import { useState } from "react";
 
 function FavList({ val }) {
-  const [check, setCheck] = useState("");
-  const dispatch = useDispatch();
-
+//   let cart = localStorage.getItem("fav1");
+//   const handleDelete = (val) => {
+//    { cart.filter((e) => {
+//       if (e.id !== val.id) {
+//         return e;
+//       }
+//       localStorage.setItem("fav1", JSON.stringify(cart));
+//     });
+//   }};
   // console.log(val);
   return (
     <Wrapper>
@@ -22,9 +19,7 @@ function FavList({ val }) {
       </div>
 
       <div>
-        <button onClick={() => dispatch(deleteItem({ val, check }))}>
-          delete
-        </button>
+        <button>delete</button>
       </div>
     </Wrapper>
   );
@@ -41,8 +36,14 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-radius: 5px;
+  margin-top: 5px;
+  background-color: #61a4bc;
   div {
     display: flex;
     align-items: center;
+  }
+  .backcolour {
+    background-color: #5b7db1;
   }
 `;

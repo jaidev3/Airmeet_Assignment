@@ -45,7 +45,6 @@ const reducer = (state = initState, { type, payload }) => {
         ...state,
 
         fav: [...state.fav, payload],
-        
       };
     default:
       return state;

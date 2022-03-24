@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import NameList from "../components/NameList";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import styled from "styled-components";
 import {
   getItemError,
   getItemLoading,
@@ -35,7 +36,7 @@ function HomePage() {
   };
 
   return (
-    <div>
+    <Wrapper>
       <Link to="/fav">
         <button>Favroite</button>{" "}
       </Link>
@@ -48,8 +49,14 @@ function HomePage() {
           ))}
         </div>
       )}
-    </div>
+    </Wrapper>
   );
 }
 
 export default HomePage;
+
+const Wrapper = styled.div`
+  background-color: hsla(50, 33%, 25%, 0.75);
+  width: 70%;
+  margin: auto;
+`;

@@ -1,15 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  getItemError,
-  getItemLoading,
-  getItemSuccess,
-  deleteItem,
-  addItem,
-} from "../ReduxStore/action";
+import { useDispatch } from "react-redux";
+import { deleteItem, addItem } from "../ReduxStore/action";
 import { useState } from "react";
-import { useEffect } from "react";
 
 function NameList({ val }) {
   const [check, setCheck] = useState("");
@@ -17,9 +10,6 @@ function NameList({ val }) {
 
   const dispatch = useDispatch();
   const handleChange = (e) => {
-
-
-    
     if (cssclass == "backcolour") {
       setCssclass("");
     } else {
@@ -27,15 +17,11 @@ function NameList({ val }) {
     }
 
     setCheck(e);
-
-    console.log(cssclass);
-    console.log(e);
   };
-  // console.log(val);
 
   return (
-    <Wrapper>
-      <div className={cssclass}>
+    <Wrapper className={cssclass}>
+      <div>
         <input
           type="checkbox"
           value="checked"
@@ -66,12 +52,15 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-radius: 5px;
+  margin-top: 5px;
+  background-color: #61a4bc;
   div {
     display: flex;
     align-items: center;
   }
   .backcolour {
-    background-color: hsla(50, 33%, 25%, .75);
-    z-index: 1;
+    background-color: #5b7db1;
+    border: 3px solid blue;
   }
 `;
