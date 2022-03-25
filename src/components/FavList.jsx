@@ -1,17 +1,10 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { deleteFavItem} from "../ReduxStore/action";
 import styled from "styled-components";
 
 function FavList({ val }) {
-//   let cart = localStorage.getItem("fav1");
-//   const handleDelete = (val) => {
-//    { cart.filter((e) => {
-//       if (e.id !== val.id) {
-//         return e;
-//       }
-//       localStorage.setItem("fav1", JSON.stringify(cart));
-//     });
-//   }};
-  // console.log(val);
+  let dispatch=useDispatch()
   return (
     <Wrapper>
       <div>
@@ -19,7 +12,7 @@ function FavList({ val }) {
       </div>
 
       <div>
-        <button>delete</button>
+        <button onClick={()=>dispatch(deleteFavItem(val))}>delete</button>
       </div>
     </Wrapper>
   );

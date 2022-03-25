@@ -4,6 +4,7 @@ import {
   GET_ITEM_LOADING,
   GET_ITEM_SUCCESS,
   ADD_ITEM_FAVORITE,
+  DELETE_FAV_ITEM
 } from "./actionType";
 
 export const deleteItem = (data) => ({
@@ -27,3 +28,8 @@ export const getItemError = (data) => ({
   type: GET_ITEM_ERROR,
   payload: data,
 });
+export const deleteFavItem = (data) => ({
+  type: DELETE_FAV_ITEM,
+  payload: data,
+});
+

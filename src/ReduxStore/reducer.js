@@ -4,6 +4,7 @@ import {
   GET_ITEM_LOADING,
   GET_ITEM_SUCCESS,
   ADD_ITEM_FAVORITE,
+  DELETE_FAV_ITEM
 } from "./actionType";
 
 const initState = { loading: false, item: [], fav: [], errors: false };
@@ -36,6 +37,16 @@ const reducer = (state = initState, { type, payload }) => {
         ...state,
         item: state.item.filter((el) => {
           if (el.id !== payload.check.id && el.id !== payload.val) {
+            return el;
+          }
+        }),
+      };
+      case DELETE_FAV_ITEM:
+      console.log(payload);
+      return {
+        ...state,
+        fav: state.fav.filter((el) => {
+          if (el.id !== payload.id) {
             return el;
           }
         }),
